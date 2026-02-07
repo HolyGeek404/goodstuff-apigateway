@@ -1,0 +1,11 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/Product/{type}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Product/{type}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [{ "Host": "localhost", "Port": 7003 }]
+    }
+  ]
+}
