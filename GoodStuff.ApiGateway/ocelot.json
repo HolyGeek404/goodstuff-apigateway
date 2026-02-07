@@ -4,8 +4,8 @@
       "UpstreamPathTemplate": "/gateway/Product/{type}",
       "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/Product/{type}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [{ "Host": "localhost", "Port": 7003 }]
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "product-api", "Port": 8080 }]
     }
   ]
 }
