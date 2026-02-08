@@ -1,11 +1,10 @@
-using Ocelot.DependencyInjection;
+using GoodStuff.ApiGateway.Extensions;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-builder.Services.AddOcelot();
-builder.Services.AddOpenApi();
+builder.AddGatewayConfiguration();
+builder.Services.AddGatewayServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -13,6 +12,6 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
-app.UseHttpsRedirection();
+app.UseGatewayPipeline();
 await app.UseOcelot();
 app.Run();

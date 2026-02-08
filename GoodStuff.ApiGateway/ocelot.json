@@ -19,14 +19,20 @@
       "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/user/me",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [{ "Host": "user-api", "Port": 8080 }]
+      "DownstreamHostAndPorts": [{ "Host": "user-api", "Port": 8080 }],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "UpstreamPathTemplate": "/gateway/user/signout",
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/user/signout",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [{ "Host": "user-api", "Port": 8080 }]
+      "DownstreamHostAndPorts": [{ "Host": "user-api", "Port": 8080 }],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     }
   ]
 }
