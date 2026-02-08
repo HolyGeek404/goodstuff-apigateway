@@ -6,6 +6,27 @@
       "DownstreamPathTemplate": "/Product/{type}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [{ "Host": "product-api", "Port": 8080 }]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/user/signin",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/user/signin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "user-api", "Port": 8080 }]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/user/me",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/user/me",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "user-api", "Port": 8080 }]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/user/signout",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/user/signout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "user-api", "Port": 8080 }]
     }
   ]
 }
