@@ -1,9 +1,16 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/gateway/Product/{type}",
+      "UpstreamPathTemplate": "/gateway/product/{type}",
       "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/Product/{type}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [{ "Host": "product-api", "Port": 8080 }]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/product/{type}/filters",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Product/{type}/filters",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [{ "Host": "product-api", "Port": 8080 }]
     },
